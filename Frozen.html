@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Énigme Mystérieuse</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #444;
+        }
+        input, button {
+            font-size: 18px;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Résolvez cette énigme</h1>
+    <p>
+        Créée pour conserver ce qui devait durer,<br>
+        Je suis un lieu où rien ne pouvait s’altérer.<br>
+        Mais aujourd’hui, ma mission est bien loin,<br>
+        Je ne fais que garder des objets sans destin.<br><br>
+        Un murmure discret habite mes murs clos,<br>
+        Un écho lointain d’un ancien manteau froid.<br>
+        Qui suis-je, oubliée dans ce rôle incertain ?
+    </p>
+
+    <input type="text" id="answer" placeholder="Votre réponse ici...">
+    <button onclick="checkAnswer()">Valider</button>
+    <p class="result" id="result"></p>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('answer').value.toLowerCase().trim();
+            const correctAnswer = "frigo"; // Vous pouvez modifier la réponse ici
+            const resultElement = document.getElementById('result');
+
+            if (answer === correctAnswer) {
+                resultElement.textContent = "Bravo ! Vous avez trouvé la bonne réponse.";
+                resultElement.style.color = "green";
+            } else {
+                resultElement.textContent = "Désolé, ce n'est pas la bonne réponse. Essayez encore !";
+                resultElement.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
